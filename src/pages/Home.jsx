@@ -13,11 +13,11 @@ const Home = () => {
             <div className="col-span-12 xl:col-span-8 xl:col-start-3 px-4">
               <div className="text-sm">
                 <header>
-                  <h2>What can azubi:web do?</h2>
+                  <h2>What can pizza:web do?</h2>
                 </header>
                 <div className="lead">
                   <p className="leading-9">
-                    azubi:web is a learning system consisting of an application
+                    pizza:web is a learning system consisting of an application
                     and a website that enables trainees to prepare for their
                     exams and exams regardless of time and place.
                   </p>
@@ -25,7 +25,7 @@ const Home = () => {
 
                 <div
                   className="ratio ratio-16x9 ym-video w-full h-[500px] bg-black"
-                  data-video='<iframe src="https://player.vimeo.com/video/247122403?title=0&amp;amp;byline=0&amp;amp;portrait=0&amp;amp;autoplay=1&amp;amp;dnt=1&amp;amp;app_id=122963" width="2000" height="1125" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" title="azubi:web Imagefilm / Moxy Hotels"></iframe>'
+                  data-video='<iframe src="https://player.vimeo.com/video/247122403?title=0&amp;amp;byline=0&amp;amp;portrait=0&amp;amp;autoplay=1&amp;amp;dnt=1&amp;amp;app_id=122963" width="2000" height="1125" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" title="pizza:web Imagefilm / Moxy Hotels"></iframe>'
                   data-consent-url="/video-consent"
                 >
                   {/* <iframe
@@ -34,7 +34,7 @@ const Home = () => {
                     height="1125"
                     frameBorder="0"
                     allow="autoplay; fullscreen; picture-in-picture"
-                    title="azubi:web Imagefilm / Moxy Hotels"
+                    title="pizza:web Imagefilm / Moxy Hotels"
                   ></iframe> */}
                 </div>
               </div>
@@ -58,10 +58,10 @@ const Home = () => {
       </section>
 
       <section className="section bg-neutral-100">
-        <div className="container">
+        <div className="container-fluid">
           <header>
             <h2 className="h4 !mb-12 text-center">
-              azubi:web honored as an outstanding digital educational medium
+              pizza:web honored as an outstanding digital educational medium
             </h2>
           </header>
 
@@ -162,7 +162,7 @@ const Home = () => {
       </section>
 
       <section className="section bg-neutral-100">
-        <div className="container">
+        <div className="container-fluid">
           <article className="grid grid-cols-12">
             <div className="col-span-12 xl:col-span-8 xl:col-start-3 px-4">
               <header>
@@ -175,9 +175,9 @@ const Home = () => {
       </section>
 
       <section className="section">
-        <div className="container">
+        <div className="container-fluid">
           <header className="d-flex justify-content-between align-items-center mb-4">
-            <h2>azubi:web News</h2>
+            <h2>Pizza:web News</h2>
             <a className="btn btn-link pe-0" href="/news">
               <span>Alle News</span>
             </a>
@@ -213,7 +213,7 @@ const Home = () => {
                 <div className="ym-contact--media"></div>
                 <div className="ym-contact--body">
                   <h3>Heike Peters</h3>
-                  <p>Project Manager azubi:web</p>
+                  <p>Project Manager pizza:web</p>
                   <p>
                     Phone:{' '}
                     <a href="tel:+4969999993251">+49 (0) 69 999 993 251</a>
@@ -232,7 +232,7 @@ const Home = () => {
         <div className="container">
           <header>
             <h2 className="h4 mb-5 text-center">
-              These customers trust azubi:web for their training{' '}
+              These customers trust pizza:web for their training{' '}
             </h2>
           </header>
         </div>

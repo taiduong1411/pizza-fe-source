@@ -338,7 +338,7 @@ const AboutUs = () => {
                   Yakamara Media begleitet uns seit Beginn 2014 und zeichnet
                   sich für das Front-/Backend Design und unsere Apps
                   verantwortlich. Auf Basis kontinuierlicher Briefings wird
-                  azubi:web permanent weiterentwickelt und mit einem
+                  pizza:web permanent weiterentwickelt und mit einem
                   zielgruppenspezifischem Design versehen. Yakamara realisiert
                   anspruchsvolle Webseiten, komplexe Online-Anwendungen sowie
                   internetbasierte Softwareprodukte.

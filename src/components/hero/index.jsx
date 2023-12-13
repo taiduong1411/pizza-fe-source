@@ -8,7 +8,7 @@ const Hero = () => {
         'pb-32 pt-0'
       )}
     >
-      <div className="grid grid-cols-2">
+      <div className="grid grid-cols-2 gap-20">
         <div
           className="text-3xl p-10 self-center bg-neutral-900 mr-auto relative"
           style={{
@@ -18,21 +18,13 @@ const Hero = () => {
         >
           <a
             href="/register"
-            className={clsx(
-              'bg-[--ym-primary-color] border-[--ym-primary-color] text-[--ym-neutral-50]',
-              'absolute left-1/2 top-0 transform -translate-x-1/2 -translate-y-1/2 rotate-0 transition-all duration-250 ease-in z-10'
-            )}
+            className="flex justify-center items-center text-xl h-48 w-48
+            p-4 absolute top-0 left-full rotate-12 z-[1] rounded-[50%]  
+            transform -translate-y-1/2 -translate-x-1/2 
+            bg-[--ym-primary-color] hover:bg-neutral-900 ring-1 hover:ring-white"
           >
-            <div
-              className="absolute left-full top-0 transform -translate-x-1/2 -translate-y-1/2 rotate-0 transition-all duration-250 ease-in z-10
-              flex items-center justify-center
-              border-2 border-solid rounded-full
-              font-[calc(1.2625rem + 0.15vw)]
-              h-[calc(2.325rem + 12.9vw)] w-[calc(2.325rem + 12.9vw)]
-              text-center
-              p-4"
-            >
-              <p>Jetzt registrieren &amp; kostenlos testen</p>
+            <div className="text-center text-2xl">
+              <p>Register now & try it for free</p>
             </div>
           </a>
           <div className="card bg-transparent border-0 rounded-0">
@@ -41,7 +33,7 @@ const Hero = () => {
                 Pizza:<span className="text-primary">web</span>
               </h1>
               <p>
-                Digital durch die Ausbildung – azubi:web begleitet Sie und Ihre
+                Digital durch die Ausbildung – pizza:web begleitet Sie und Ihre
                 Auszubildenden durch den Ausbildungsalltag.
               </p>
             </div>
@@ -90,7 +82,7 @@ const Hero = () => {
             </header>
             <div className="lead">
               <p>
-                azubi:web accompanies you as a company and your trainees through
+                pizza:web accompanies you as a company and your trainees through
                 everyday training, starting with the digital report booklet and
                 the playful transfer of knowledge through games and duels. Fun
                 for your trainee, time savings for your trainer.

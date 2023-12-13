@@ -8,10 +8,10 @@ export const LicensesPricingComp = () => {
       <div className="grid grid-cols-12 gap-6">
         <div className="col-span-8">
           <p>
-            azubi:web offers a variety of options to tailor our program to your
+            pizza:web offers a variety of options to tailor our program to your
             needs. Depending on your wishes, modules such as the learning quiz,
             the digital training certificate or the entry of company-specific
-            content can be combined. Put together your personal azubi:web and
+            content can be combined. Put together your personal pizza:web and
             receive your personal offer.
           </p>
           <p>
@@ -38,7 +38,7 @@ export const LicensesPricingComp = () => {
         <div className="col-span-8">
           <p>
             Please register via this website or your APP. You can then use
-            azubi:web free of charge and without obligation for 5 days.
+            pizza:web free of charge and without obligation for 5 days.
             Afterwards, you have the opportunity to continue using the app with
             the license provided to you by your training company (you will be
             informed about it by your trainer), or a personal license (€59.00

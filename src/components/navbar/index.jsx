@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import Logo from '../logo';
 import Sidebar from '../sidebar';
 const Navbar = () => {
   const [color, setColor] = useState(false);
@@ -25,19 +25,7 @@ const Navbar = () => {
             color ? 'py-3' : 'py-8'
           )}
         >
-          <Link
-            to="/"
-            className="flex items-center space-x-3 rtl:space-x-reverse"
-          >
-            <img
-              src="https://flowbite.com/docs/images/logo.svg"
-              className="h-8"
-              alt="Flowbite Logo"
-            />
-            <span className="text-white self-center text-2xl leading-7 font-semibold whitespace-nowrap ">
-              Pizza
-            </span>
-          </Link>
+          <Logo />
           <div className="">
             <a
               href=""

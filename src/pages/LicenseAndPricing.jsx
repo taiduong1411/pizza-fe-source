@@ -8,7 +8,7 @@ export default function LicenseAndPricing() {
       <HeroLicense />
       <section className="section">
         <div className="container">
-          <div className="mx-60">
+          <div className="lg:mx-60">
             <header>
               <h1>
                 <span className="text-primary">Individually</span> tailored to
@@ -69,7 +69,7 @@ export default function LicenseAndPricing() {
                     </div>
                     <div className="ym-contact--body">
                       <h3>Heike Peters</h3>
-                      <p>Project Managerin azubi:web</p>
+                      <p>Project Managerin pizza:web</p>
                       <p>
                         Telefon:{' '}
                         <a href="tel:+4969999993251">+49 (0) 69 999 993 251</a>
