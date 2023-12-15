@@ -8,7 +8,7 @@ export default function LicenseAndPricing() {
       <HeroLicense />
       <section className="section">
         <div className="container">
-          <div className="lg:mx-60">
+          <div className="mx-auto">
             <header>
               <h1>
                 <span className="text-primary">Individually</span> tailored to

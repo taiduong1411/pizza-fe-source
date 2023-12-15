@@ -182,7 +182,7 @@ const Home = () => {
               <span>Alle News</span>
             </a>
           </header>
-          <div className="grid grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <PostCard />
             <PostCard />
             <PostCard />

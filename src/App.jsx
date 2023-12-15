@@ -15,6 +15,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/news" element={<News />} />
+          <Route path="/contact" element={<News />} />
           <Route path="/licenses-pricing" element={<LicenseAndPricing />} />
         </Routes>
       </BrowserRouter>

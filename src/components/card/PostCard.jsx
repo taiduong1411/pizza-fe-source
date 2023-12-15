@@ -12,13 +12,9 @@ const PostCard = () => {
         loading="lazy"
       />
       <div className=" block mx-6 ">
-        <div className="flex items-center space-x-3">
-          <svg
-            className="h-6 w-6 stroke-sky-500 group-hover:stroke-white"
-            fill="none"
-            viewBox="0 0 24 24"
-          ></svg>
-          <h3 className="text-slate-900 group-hover:text-white text-sm font-semibold">
+        <div className="date text-primary my-2">25/12/2023</div>
+        <div className="flex items-center ">
+          <h3 className="text-slate-900 group-hover:text-white font-semibold text-xl my-2">
             New project
           </h3>
         </div>

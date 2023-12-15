@@ -1,7 +1,17 @@
+import { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { FaEyeSlash, FaRegEye } from 'react-icons/fa';
 import HeroRegister from '../../components/hero/HeroRegister';
 import AuthLayout from '../../layouts/AuthLayout';
 
 export const Register = () => {
+  const { register, handleSubmit } = useForm({});
+
+  const [showPassword, setShowPassword] = useState(false);
+
+  const onSubmit = (data) => {
+    console.log(data);
+  };
   return (
     <AuthLayout bgColor={'bg-neutral-900'}>
       <HeroRegister />
@@ -32,7 +42,7 @@ export const Register = () => {
       <section className="section">
         <div className="container">
           <div className=" text-white">
-            <form action="">
+            <form onSubmit={handleSubmit(onSubmit)}>
               <div className="grid grid-cols-12 gap-10">
                 <div className="col-span-12">
                   <h3>Baseline</h3>
@@ -41,7 +51,11 @@ export const Register = () => {
                   <label htmlFor="" className="text-primary">
                     Username*
                   </label>
-                  <input type="text" className="form-control" />
+                  <input
+                    type="text"
+                    {...register('username')}
+                    className="form-control"
+                  />
                 </div>
 
                 <div className="col-span-6 mb-8 flex flex-col">
@@ -52,6 +66,7 @@ export const Register = () => {
                     name=""
                     className="form-select tomselected ts-hidden-accessible"
                     id=""
+                    {...register('Salutation')}
                   >
                     <option value="">Lord</option>
                     <option value="">Wife</option>
@@ -62,14 +77,22 @@ export const Register = () => {
                   <label htmlFor="" className="text-primary">
                     Forename*
                   </label>
-                  <input type="text" className="form-control" />
+                  <input
+                    type="text"
+                    {...register('forename')}
+                    className="form-control"
+                  />
                 </div>
 
                 <div className="col-span-6 mb-8 flex flex-col">
                   <label htmlFor="" className="text-primary">
                     Surname*
                   </label>
-                  <input type="text" className="form-control" />
+                  <input
+                    type="text"
+                    {...register('surname')}
+                    className="form-control"
+                  />
                 </div>
 
                 <div className="col-span-12 mb-8 flex flex-col">
@@ -80,6 +103,7 @@ export const Register = () => {
                     name=""
                     className="form-select tomselected ts-hidden-accessible"
                     id=""
+                    {...register('apprenticeship')}
                   >
                     <option value="">Lord</option>
                     <option value="">Wife</option>
@@ -95,47 +119,99 @@ export const Register = () => {
                   <label htmlFor="" className="text-primary">
                     Street*
                   </label>
-                  <input type="text" className="form-control" />
+                  <input
+                    type="text"
+                    {...register('street')}
+                    className="form-control"
+                  />
                 </div>
 
                 <div className="col-span-6 mb-8 flex flex-col">
                   <label htmlFor="" className="text-primary">
                     Address
                   </label>
-                  <input type="text" className="form-control" />
+                  <input
+                    type="text"
+                    {...register('address')}
+                    className="form-control"
+                  />
                 </div>
 
                 <div className="col-span-6 mb-8 flex flex-col">
                   <label htmlFor="" className="text-primary">
                     Zip code*
                   </label>
-                  <input type="text" className="form-control" />
+                  <input
+                    type="text"
+                    {...register('zipcode')}
+                    className="form-control"
+                  />
                 </div>
 
                 <div className="col-span-6 mb-8 flex flex-col">
                   <label htmlFor="" className="text-primary">
                     Place*
                   </label>
-                  <input type="text" className="form-control" />
+                  <input
+                    type="text"
+                    {...register('place')}
+                    className="form-control"
+                  />
                 </div>
               </div>
 
               <div className="grid grid-cols-12 gap-10">
                 <div className="col-span-12">
-                  <h3>Address</h3>
+                  <h3>Password</h3>
                 </div>
-                <div className="col-span-6 mb-8 flex flex-col">
+                <div className="col-span-6 mb-8 flex flex-col ">
                   <label htmlFor="" className="text-primary">
                     Password*
                   </label>
-                  <input type="password" className="form-control" />
+                  <div className="relative">
+                    <input
+                      type={showPassword ? 'text' : 'password'}
+                      id="password"
+                      className="bg-gray-50 ring-0 outline-none border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                      placeholder="Password"
+                      name="password"
+                      {...register('password', { required: true })}
+                    />
+
+                    <button
+                      className="bg-neutral-600 hover:bg-neutral-500 border-neutral-900 rounded-0 absolute inset-y-0 right-0 p-2.5"
+                      type="button"
+                      onClick={() => setShowPassword(!showPassword)}
+                      tabIndex="-1"
+                    >
+                      {showPassword ? <FaRegEye /> : <FaEyeSlash />}
+                    </button>
+                  </div>
                 </div>
 
                 <div className="col-span-6 mb-8 flex flex-col">
                   <label htmlFor="" className="text-primary">
                     Confirm Password*
                   </label>
-                  <input type="password" className="form-control" />
+                  <div className="relative">
+                    <input
+                      type={showPassword ? 'text' : 'password'}
+                      id="confirm-password"
+                      className="bg-gray-50 ring-0 outline-none border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                      placeholder="Password"
+                      name="password"
+                      {...register('confirmPassword', { required: true })}
+                    />
+
+                    <button
+                      className="bg-neutral-600 hover:bg-neutral-500 border-neutral-900 rounded-0 absolute inset-y-0 right-0 p-2.5"
+                      type="button"
+                      onClick={() => setShowPassword(!showPassword)}
+                      tabIndex="-1"
+                    >
+                      {showPassword ? <FaRegEye /> : <FaEyeSlash />}
+                    </button>
+                  </div>
                 </div>
               </div>
 

@@ -5,7 +5,7 @@ export const News = () => {
   return (
     <MainLayout>
       <section className="section mt-16">
-        <div className="container">
+        <div className="container-fluid">
           <div className="ym-content text-center">
             <header>
               <h1>News</h1>
@@ -19,7 +19,7 @@ export const News = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <PostCard />
             <PostCard />
             <PostCard />
