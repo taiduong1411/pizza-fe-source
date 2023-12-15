@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Logo from '../logo';
 import Sidebar from '../sidebar';
 const Navbar = () => {
@@ -27,15 +28,15 @@ const Navbar = () => {
         >
           <Logo />
           <div className="">
-            <a
-              href=""
-              className="rounded-full text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm px-5 py-2.5 text-center me-2 mb-2  "
+            <Link
+              to="/register"
+              className="rounded-full text-white hover:text-white border border-white-700 hover:bg-white-800 focus:ring-4 focus:outline-none focus:ring-white-300 font-medium text-sm px-5 py-2.5 text-center me-2 mb-2  "
             >
               Register
-            </a>
+            </Link>
             <a
               href=""
-              className="rounded-full text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm px-5 py-2.5 text-center me-2 mb-2  "
+              className="rounded-full text-white hover:text-white border border-white-700 hover:bg-white-800 focus:ring-4 focus:outline-none focus:ring-white-300 font-medium text-sm px-5 py-2.5 text-center me-2 mb-2  "
             >
               Logout
             </a>

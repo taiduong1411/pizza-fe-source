@@ -201,7 +201,7 @@ export const Register = () => {
               <div className="flex justify-between">
                 <div className="">
                   Do you already have an account?{' '}
-                  <span className="text-primary">Announce</span>
+                  <span className="text-primary">Login</span>
                 </div>
                 <div className="">
                   <button

@@ -1,7 +1,18 @@
+import { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { FaEyeSlash, FaRegEye, FaRegUser } from 'react-icons/fa';
+import { RiLockPasswordFill } from 'react-icons/ri';
 import Logo from '../../components/logo';
 import AuthLayout from '../../layouts/AuthLayout';
 
 export const Login = () => {
+  const { register, handleSubmit } = useForm({});
+
+  const [showPassword, setShowPassword] = useState(false);
+
+  const onSubmit = (data) => {
+    console.log(data);
+  };
   return (
     <AuthLayout bgColor={'bg-gradient-to-b from-[#0441ac] to-[#00b9fd]'}>
       <section className="section text-neutral-50 !pt-40">
@@ -24,62 +35,47 @@ export const Login = () => {
                     </div>
                   </div>
 
-                  <form method="post" action="/login">
+                  <form method="post" onSubmit={handleSubmit(onSubmit)}>
                     <div className="mb-4">
-                      <div className="input-group input-group-lg">
-                        <div className="input-group-text">
-                          <i className="icon-user3"></i>
+                      <div className="input-group input-group-lg relative rounded-lg">
+                        <div className="bg-neutral-600 absolute ring-0 inset-y-0 start-0 flex items-center p-3.5 pointer-events-none">
+                          <FaRegUser />
                         </div>
                         <input
                           type="text"
-                          name="_username"
-                          className="form-control"
-                          placeholder="Benutzername"
-                          aria-label="Benutzername"
-                          autoComplete="username"
-                          required=""
-                          value=""
+                          id="username"
+                          className="bg-gray-50 ring-0 outline-none border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full ps-14 p-2.5"
+                          placeholder="Username"
+                          name="username"
+                          {...register('username', { required: true })}
                         />
                       </div>
                     </div>
                     <div className="mb-4">
-                      <div
-                        className="input-group input-group-lg"
-                        data-password=""
-                      >
-                        <div className="input-group-text">
-                          <i className="icon-key5"></i>
+                      <div className="input-group input-group-lg relative rounded-lg overflow-hidden">
+                        <div className="bg-neutral-600 absolute ring-0 start-0 flex items-center p-3.5 pointer-events-none">
+                          <RiLockPasswordFill />
                         </div>
                         <input
-                          type="password"
-                          name="_password"
-                          className="form-control"
-                          placeholder="Passwort"
-                          aria-label="Passwort"
-                          autoComplete="current-password"
-                          required=""
+                          type={showPassword ? 'text' : 'password'}
+                          id="password"
+                          className="bg-gray-50 ring-0 outline-none border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full ps-14 p-2.5"
+                          placeholder="Password"
+                          name="password"
+                          {...register('password', { required: true })}
                         />
+
                         <button
-                          className="btn btn-neutral-300 border-neutral-900 rounded-0"
+                          className="bg-neutral-600 hover:bg-neutral-500 border-neutral-900 rounded-0 absolute inset-y-0 right-0 p-2.5"
                           type="button"
+                          onClick={() => setShowPassword(!showPassword)}
                           tabIndex="-1"
                         >
-                          <span data-password-blocked="">
-                            {' '}
-                            <svg className="icon">
-                              <use xlinkHref="#svg-icon-eye-blocked"></use>
-                            </svg>
-                          </span>
-                          <span data-password-visible="" className="d-none">
-                            {' '}
-                            <svg className="icon">
-                              <use xlinkHref="#svg-icon-eye"></use>
-                            </svg>
-                          </span>
+                          {showPassword ? <FaRegEye /> : <FaEyeSlash />}
                         </button>
                       </div>
                     </div>
-                    <div className="mb-4 flex justify-content-between">
+                    <div className="mb-4 flex justify-between">
                       <div className="form-check">
                         <input
                           id="login-remember-me"
@@ -97,12 +93,12 @@ export const Login = () => {
                             tabIndex="0"
                             data-toggle="check"
                           >
-                            Eingeloggt bleiben
+                            Stay logged in
                           </label>
                         </span>
                       </div>
-                      <div>
-                        <a href="/password-forgotten">Passwort vergessen?</a>
+                      <div className="">
+                        <a href="/password-forgotten">Forgot your password</a>
                       </div>
                     </div>
 
@@ -113,13 +109,11 @@ export const Login = () => {
                     />
 
                     <div className="mb-4 flex justify-center">
-                      <button
+                      <input
                         type="submit"
                         className="rounded-full bg-blue-500 hover:bg-blue-600 px-9 py-3 btn-primary"
-                      >
-                        <span>Announce</span>
-                        <i className="icon-enter"></i>
-                      </button>
+                        value={'Login'}
+                      />
                     </div>
 
                     <div className="mb-4 flex justify-center text-primary">

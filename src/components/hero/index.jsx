@@ -21,7 +21,7 @@ const Hero = () => {
             className="flex justify-center items-center text-xl h-48 w-48
             p-4 absolute top-0 left-full rotate-12 z-[1] rounded-[50%]  
             transform -translate-y-1/2 -translate-x-1/2 
-            bg-[--ym-primary-color] hover:bg-neutral-900 ring-1 hover:ring-white"
+            bg-[--ym-primary-color] text-white hover:bg-neutral-900 ring-1 hover:ring-white"
           >
             <div className="text-center text-2xl">
               <p>Register now & try it for free</p>

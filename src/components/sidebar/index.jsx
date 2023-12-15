@@ -22,7 +22,7 @@ const SidebarItems = [
   },
   {
     title: 'Registration',
-    to: '/registration',
+    to: '/register',
   },
   {
     title: 'Contact',
@@ -75,7 +75,7 @@ const Sidebar = ({ open, setOpen }) => {
               <Link
                 key={index}
                 to={item.to}
-                className="nav-link block p-4 duration-150 ease-in-out hover:bg-[--ym-primary-color] font-semibold text-2xl"
+                className="nav-link block p-4 duration-150 ease-in-out hover:text-white hover:bg-[--ym-primary-color] font-semibold text-2xl"
               >
                 {item.title}
               </Link>
@@ -84,7 +84,7 @@ const Sidebar = ({ open, setOpen }) => {
         </div>
         <div className="my-10 py-10 ring-[--ym-neutral-500] border-t-2 border-b-2 p-4">
           <CustomButton
-            name={'Announce'}
+            name={'Login'}
             to={'/login'}
             className={'bg-green-300 hover:bg-green-500'}
           />
