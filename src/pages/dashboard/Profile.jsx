@@ -15,7 +15,7 @@ export default function Profile() {
   return (
     <DashboardLayout>
       <Section title={'My Profile'} className={'!pt-40 px-6'} fluid>
-        <form action="">
+        <form action="" className="mt-16">
           <div className="flex justify-between items-center">
             <h3>Baseline</h3>
             <p className="text-neutral-600">
@@ -23,7 +23,7 @@ export default function Profile() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="flex flex-col">
               <label htmlFor="" className="mb-2 text-neutral-600">
                 Username*
