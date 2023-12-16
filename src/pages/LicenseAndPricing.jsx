@@ -19,7 +19,7 @@ export default function LicenseAndPricing() {
           </div>
         </div>
       </section>
-      <section className="ym-section bg-neutral-100">
+      <section className="section bg-neutral-100">
         <div className="container">
           <article className="grid">
             <div className="g-col-12 g-col-xl-8 g-start-xl-3 px-4">

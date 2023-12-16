@@ -3,9 +3,9 @@ import clsx from 'clsx';
 export default function HeroRegister() {
   return (
     <section className={clsx('bg-neutral-900 text-neutral-900', 'pb-32 pt-0')}>
-      <div className="grid grid-cols-2">
+      <div className="grid gird-cols-1 md:grid-cols-2">
         <div
-          className="text-3xl p-10 self-center bg-white mr-auto relative"
+          className="text-3xl order-last md:order-first p-10 self-center bg-white mr-auto relative"
           style={{
             backgroundColor:
               'rgba(var(--bs-neutral-900-rgb),var(--bs-bg-opacity))!important',

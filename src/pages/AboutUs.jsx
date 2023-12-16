@@ -46,7 +46,7 @@ const AboutUs = () => {
 
       <section className="section ">
         <div className="container">
-          <div className="mx-32">
+          <div className="mx-auto">
             <div className="ym-content">
               <header>
                 <h1>
@@ -78,7 +78,7 @@ const AboutUs = () => {
 
       <section className="section bg-neutral-900 text-neutral-50">
         <div className="container">
-          <article className="mx-32 ym-content">
+          <article className="mx-auto ym-content">
             <header>
               <h2>
                 <span className="text-generationl-primary">Our approach</span> -
@@ -147,7 +147,7 @@ const AboutUs = () => {
 
       <section className="section">
         <div className="container">
-          <div className="grid grid-cols-3">
+          <div className="grid grid-cols-1 md:grid-cols-3">
             <div className="ym-person g-col-12 g-col-md-6 g-col-lg-4">
               <picture className="ym-person--media">
                 <source

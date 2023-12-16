@@ -43,11 +43,11 @@ const Register = () => {
         <div className="container">
           <div className=" text-white">
             <form onSubmit={handleSubmit(onSubmit)}>
-              <div className="grid grid-cols-12 gap-10">
+              <div className="grid grid-cols-12 md:gap-10">
                 <div className="col-span-12">
                   <h3>Baseline</h3>
                 </div>
-                <div className="col-span-6 mb-8 flex flex-col">
+                <div className="col-span-12 md:col-span-6 mb-8 flex flex-col">
                   <label htmlFor="" className="text-primary">
                     Username*
                   </label>
@@ -58,7 +58,7 @@ const Register = () => {
                   />
                 </div>
 
-                <div className="col-span-6 mb-8 flex flex-col">
+                <div className="col-span-12 md:col-span-6 mb-8 flex flex-col">
                   <label htmlFor="" className="text-primary">
                     Salutation
                   </label>
@@ -73,7 +73,7 @@ const Register = () => {
                   </select>
                 </div>
 
-                <div className="col-span-6 mb-8 flex flex-col">
+                <div className="col-span-12 md:col-span-6 mb-8 flex flex-col">
                   <label htmlFor="" className="text-primary">
                     Forename*
                   </label>
@@ -84,7 +84,7 @@ const Register = () => {
                   />
                 </div>
 
-                <div className="col-span-6 mb-8 flex flex-col">
+                <div className="col-span-12 md:col-span-6 mb-8 flex flex-col">
                   <label htmlFor="" className="text-primary">
                     Surname*
                   </label>
@@ -111,11 +111,11 @@ const Register = () => {
                 </div>
               </div>
 
-              <div className="grid grid-cols-12 gap-10">
+              <div className="grid grid-cols-12 md:gap-10">
                 <div className="col-span-12">
                   <h3>Address</h3>
                 </div>
-                <div className="col-span-6 mb-8 flex flex-col">
+                <div className="col-span-12 md:col-span-6 mb-8 flex flex-col">
                   <label htmlFor="" className="text-primary">
                     Street*
                   </label>
@@ -126,7 +126,7 @@ const Register = () => {
                   />
                 </div>
 
-                <div className="col-span-6 mb-8 flex flex-col">
+                <div className="col-span-12 md:col-span-6 mb-8 flex flex-col">
                   <label htmlFor="" className="text-primary">
                     Address
                   </label>
@@ -137,7 +137,7 @@ const Register = () => {
                   />
                 </div>
 
-                <div className="col-span-6 mb-8 flex flex-col">
+                <div className="col-span-12 md:col-span-6 mb-8 flex flex-col">
                   <label htmlFor="" className="text-primary">
                     Zip code*
                   </label>
@@ -148,7 +148,7 @@ const Register = () => {
                   />
                 </div>
 
-                <div className="col-span-6 mb-8 flex flex-col">
+                <div className="col-span-12 md:col-span-6 mb-8 flex flex-col">
                   <label htmlFor="" className="text-primary">
                     Place*
                   </label>
@@ -160,11 +160,11 @@ const Register = () => {
                 </div>
               </div>
 
-              <div className="grid grid-cols-12 gap-10">
+              <div className="grid grid-cols-12 md:gap-10">
                 <div className="col-span-12">
                   <h3>Password</h3>
                 </div>
-                <div className="col-span-6 mb-8 flex flex-col ">
+                <div className="col-span-12 md:col-span-6 mb-8 flex flex-col ">
                   <label htmlFor="" className="text-primary">
                     Password*
                   </label>
@@ -189,7 +189,7 @@ const Register = () => {
                   </div>
                 </div>
 
-                <div className="col-span-6 mb-8 flex flex-col">
+                <div className="col-span-12 md:col-span-6 mb-8 flex flex-col">
                   <label htmlFor="" className="text-primary">
                     Confirm Password*
                   </label>
