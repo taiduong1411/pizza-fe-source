@@ -5,7 +5,7 @@ import { RiLockPasswordFill } from 'react-icons/ri';
 import Logo from '../../components/logo';
 import AuthLayout from '../../layouts/AuthLayout';
 
-export const Login = () => {
+const Login = () => {
   const { register, handleSubmit } = useForm({});
 
   const [showPassword, setShowPassword] = useState(false);
@@ -131,3 +131,4 @@ export const Login = () => {
     </AuthLayout>
   );
 };
+export default Login;

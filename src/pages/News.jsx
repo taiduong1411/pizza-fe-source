@@ -1,7 +1,7 @@
 import PostCard from '../components/card/PostCard';
 import MainLayout from '../layouts/MainLayout';
 
-export const News = () => {
+const News = () => {
   return (
     <MainLayout>
       <section className="section mt-16">
@@ -30,3 +30,5 @@ export const News = () => {
     </MainLayout>
   );
 };
+
+export default News;

@@ -4,7 +4,7 @@ import { FaEyeSlash, FaRegEye } from 'react-icons/fa';
 import HeroRegister from '../../components/hero/HeroRegister';
 import AuthLayout from '../../layouts/AuthLayout';
 
-export const Register = () => {
+const Register = () => {
   const { register, handleSubmit } = useForm({});
 
   const [showPassword, setShowPassword] = useState(false);
@@ -296,3 +296,4 @@ export const Register = () => {
     </AuthLayout>
   );
 };
+export default Register;

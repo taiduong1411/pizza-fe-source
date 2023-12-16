@@ -3,7 +3,7 @@ import CustomButton from '../../components/button/CustomButton';
 import CircleProgressBar from '../../components/progress-bar/CircleProgressBar';
 import { DashboardLayout } from '../../layouts/DashboardLayout';
 
-export const Dashboard = () => {
+const Dashboard = () => {
   const [percentage, setPercentage] = useState(35);
 
   return (
@@ -79,3 +79,5 @@ export const Dashboard = () => {
     </DashboardLayout>
   );
 };
+
+export default Dashboard;

@@ -19,7 +19,7 @@ const questionItems = [
     desc: 'We strive to work around client timelines and urgent requests. If you have an urgent request, please reach out to us immediately so we can help you deliver.',
   },
 ];
-export const InfoHub = () => {
+const InfoHub = () => {
   const [open, setOpen] = useState(false);
 
   const toggle = (index) => {
@@ -81,3 +81,5 @@ export const InfoHub = () => {
     </DashboardLayout>
   );
 };
+
+export default InfoHub;
