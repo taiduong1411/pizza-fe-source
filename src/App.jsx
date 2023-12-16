@@ -8,6 +8,8 @@ import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
 import Dashboard from './pages/dashboard/Dashboard';
 import InfoHub from './pages/dashboard/InfoHub';
+import ListCourses from './pages/dashboard/ListCourses';
+import Profile from './pages/dashboard/Profile';
 import Quizz from './pages/dashboard/Quizz';
 
 function App() {
@@ -26,6 +28,8 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/info-hub" element={<InfoHub />} />
           <Route path="/play" element={<Quizz />} />
+          <Route path="/:level" element={<ListCourses />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
       </BrowserRouter>
     </>

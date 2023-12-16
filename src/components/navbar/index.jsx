@@ -20,7 +20,7 @@ const Navbar = ({ background }) => {
             ? 'bg-[--ym-warning-color] duration-700'
             : background + ' duration-700'
         }
-         ${!open ? 'z-10' : 'z-0'} fixed top-0 w-full`}
+         ${!open ? 'z-20' : 'z-0'} fixed top-0 w-full`}
       >
         <div
           className={clsx(
