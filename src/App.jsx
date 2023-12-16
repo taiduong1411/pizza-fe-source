@@ -3,11 +3,11 @@ import AboutUs from './pages/AboutUs';
 import Contact from './pages/Contact';
 import Home from './pages/Home';
 import LicenseAndPricing from './pages/LicenseAndPricing';
-import { News } from './pages/News';
-import { Login } from './pages/auth/Login';
-import { Register } from './pages/auth/Register';
-import { Dashboard } from './pages/dashboard/Dashboard';
-import { InfoHub } from './pages/dashboard/InfoHub';
+import News from './pages/News';
+import Login from './pages/auth/Login';
+import Register from './pages/auth/Register';
+import Dashboard from './pages/dashboard/Dashboard';
+import InfoHub from './pages/dashboard/InfoHub';
 import Quizz from './pages/dashboard/Quizz';
 
 function App() {
