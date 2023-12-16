@@ -5,7 +5,8 @@ import Navbar from '../components/navbar';
 const MainLayout = ({ children }) => {
   return (
     <main className="relative">
-      <Navbar />
+      <Navbar background={'bg-transparent'} />
+
       {children}
 
       <Footer />

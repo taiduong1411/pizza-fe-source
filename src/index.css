@@ -542,3 +542,19 @@ a:hover .text-generationl-primary {
   cursor: default;
   opacity: 0.5;
 }
+
+.ReactCollapse--collapse {
+  transition: height 500ms;
+}
+
+/* Circle progress bar */
+.circle-background {
+  fill: none;
+  stroke: var(--ym-neutral-900);
+}
+.circle-progress {
+  fill: none;
+  stroke: var(--ym-primary-color);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}

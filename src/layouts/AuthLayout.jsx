@@ -5,7 +5,8 @@ import Navbar from '../components/navbar';
 export default function AuthLayout({ children, bgColor }) {
   return (
     <main className={'relative ' + bgColor}>
-      <Navbar />
+      <Navbar background={'bg-transparent'} />
+
       {children}
 
       <Footer />

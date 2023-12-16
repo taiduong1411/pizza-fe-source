@@ -6,7 +6,7 @@ const CustomButton = ({ to, name, className }) => {
   return (
     <Link
       className={clsx(
-        'text-white focus:outline-none focus:ring-4 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2',
+        'text-white outline-none font-medium rounded-full text-lg px-5 py-4 text-center me-2 mb-2',
         className
       )}
       to={to}

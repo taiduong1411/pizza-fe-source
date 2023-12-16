@@ -3,7 +3,9 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../logo';
 import Sidebar from '../sidebar';
-const Navbar = () => {
+
+// eslint-disable-next-line react/prop-types
+const Navbar = ({ background }) => {
   const [color, setColor] = useState(false);
   const [open, setOpen] = useState(false);
   const changeColor = () => {
@@ -16,7 +18,7 @@ const Navbar = () => {
         className={`navbar ${
           color
             ? 'bg-[--ym-warning-color] duration-700'
-            : 'bg-transparent duration-700'
+            : background + ' duration-700'
         }
          ${!open ? 'z-10' : 'z-0'} fixed top-0 w-full`}
       >
