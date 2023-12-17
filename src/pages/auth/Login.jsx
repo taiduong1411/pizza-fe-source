@@ -1,17 +1,46 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { useNavigate, } from 'react-router-dom';
 import { FaEyeSlash, FaRegEye, FaRegUser } from 'react-icons/fa';
 import { RiLockPasswordFill } from 'react-icons/ri';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Logo from '../../components/logo';
 import AuthLayout from '../../layouts/AuthLayout';
-
+import { ApiClient } from '../../interceptors/axios';
 const Login = () => {
   const { register, handleSubmit } = useForm({});
 
   const [showPassword, setShowPassword] = useState(false);
-
-  const onSubmit = (data) => {
-    console.log(data);
+  if (localStorage.getItem('level')) {
+    localStorage.removeItem('level');
+    localStorage.removeItem('accessToken');
+  }
+  const nav = useNavigate();
+  const onSubmit = async (data) => {
+    await ApiClient().post('account/login', data).then(res => {
+      if (res.status == 200) {
+        const level = res.data.level;
+        localStorage.setItem('level', level);
+        localStorage.setItem('accessToken', res.data.accessToken);
+        if (level == '1') {
+          nav('/')
+        } else if (level == '2') {
+          nav('/teacher')
+        }
+      } else {
+        toast.error(`${res.data.msg}`, {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+      }
+    })
   };
   return (
     <AuthLayout bgColor={'bg-gradient-to-b from-[#0441ac] to-[#00b9fd]'}>
@@ -45,9 +74,9 @@ const Login = () => {
                           type="text"
                           id="username"
                           className="bg-gray-50 ring-0 outline-none border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full ps-14 p-2.5"
-                          placeholder="Username"
-                          name="username"
-                          {...register('username', { required: true })}
+                          placeholder="Email"
+                          name="email"
+                          {...register('email', { required: true })}
                         />
                       </div>
                     </div>
@@ -118,7 +147,7 @@ const Login = () => {
 
                     <div className="mb-4 flex justify-center text-primary">
                       <a href="/register">
-                        Don't have an account yet? Register here...
+                        Dont have an account yet? Register here...
                       </a>
                     </div>
                   </form>
@@ -128,6 +157,18 @@ const Login = () => {
           </div>
         </div>
       </section>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </AuthLayout>
   );
 };

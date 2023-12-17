@@ -1,16 +1,29 @@
 import { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import { useForm } from 'react-hook-form';
 import { FaEyeSlash, FaRegEye } from 'react-icons/fa';
 import HeroRegister from '../../components/hero/HeroRegister';
 import AuthLayout from '../../layouts/AuthLayout';
-
+import { ApiClient } from '../../interceptors/axios';
 const Register = () => {
   const { register, handleSubmit } = useForm({});
 
   const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState('');
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const nav = useNavigate();
+  const onSubmit = async (data) => {
+    if (data.password != data.confirmPassword) {
+      setError("Password and Confirm Password Incorrect. Please try again !")
+    } else {
+      await ApiClient().post('account/register', data).then(res => {
+        if (res.status == 200) {
+          nav('/login')
+        } else {
+          setError(`${res.data.msg}`)
+        }
+      })
+    }
   };
   return (
     <AuthLayout bgColor={'bg-neutral-900'}>
@@ -49,16 +62,16 @@ const Register = () => {
                 </div>
                 <div className="col-span-12 md:col-span-6 mb-8 flex flex-col">
                   <label htmlFor="" className="text-primary">
-                    Username*
+                    Email*
                   </label>
                   <input
                     type="text"
-                    {...register('username')}
+                    {...register('email')}
                     className="form-control"
                   />
                 </div>
 
-                <div className="col-span-12 md:col-span-6 mb-8 flex flex-col">
+                {/* <div className="col-span-12 md:col-span-6 mb-8 flex flex-col">
                   <label htmlFor="" className="text-primary">
                     Salutation
                   </label>
@@ -71,20 +84,20 @@ const Register = () => {
                     <option value="">Lord</option>
                     <option value="">Wife</option>
                   </select>
-                </div>
+                </div> */}
 
                 <div className="col-span-12 md:col-span-6 mb-8 flex flex-col">
                   <label htmlFor="" className="text-primary">
-                    Forename*
+                    Fullname*
                   </label>
                   <input
                     type="text"
-                    {...register('forename')}
+                    {...register('fullname')}
                     className="form-control"
                   />
                 </div>
 
-                <div className="col-span-12 md:col-span-6 mb-8 flex flex-col">
+                {/* <div className="col-span-12 md:col-span-6 mb-8 flex flex-col">
                   <label htmlFor="" className="text-primary">
                     Surname*
                   </label>
@@ -93,9 +106,9 @@ const Register = () => {
                     {...register('surname')}
                     className="form-control"
                   />
-                </div>
+                </div> */}
 
-                <div className="col-span-12 mb-8 flex flex-col">
+                {/* <div className="col-span-12 mb-8 flex flex-col">
                   <label htmlFor="" className="text-primary">
                     Apprenticeship*
                   </label>
@@ -108,11 +121,11 @@ const Register = () => {
                     <option value="">Lord</option>
                     <option value="">Wife</option>
                   </select>
-                </div>
+                </div> */}
               </div>
 
               <div className="grid grid-cols-12 md:gap-10">
-                <div className="col-span-12">
+                {/* <div className="col-span-12">
                   <h3>Address</h3>
                 </div>
                 <div className="col-span-12 md:col-span-6 mb-8 flex flex-col">
@@ -124,9 +137,9 @@ const Register = () => {
                     {...register('street')}
                     className="form-control"
                   />
-                </div>
+                </div> */}
 
-                <div className="col-span-12 md:col-span-6 mb-8 flex flex-col">
+                {/* <div className="col-span-12 md:col-span-6 mb-8 flex flex-col">
                   <label htmlFor="" className="text-primary">
                     Address
                   </label>
@@ -135,9 +148,9 @@ const Register = () => {
                     {...register('address')}
                     className="form-control"
                   />
-                </div>
+                </div> */}
 
-                <div className="col-span-12 md:col-span-6 mb-8 flex flex-col">
+                {/* <div className="col-span-12 md:col-span-6 mb-8 flex flex-col">
                   <label htmlFor="" className="text-primary">
                     Zip code*
                   </label>
@@ -146,9 +159,9 @@ const Register = () => {
                     {...register('zipcode')}
                     className="form-control"
                   />
-                </div>
+                </div> */}
 
-                <div className="col-span-12 md:col-span-6 mb-8 flex flex-col">
+                {/* <div className="col-span-12 md:col-span-6 mb-8 flex flex-col">
                   <label htmlFor="" className="text-primary">
                     Place*
                   </label>
@@ -157,7 +170,7 @@ const Register = () => {
                     {...register('place')}
                     className="form-control"
                   />
-                </div>
+                </div> */}
               </div>
 
               <div className="grid grid-cols-12 md:gap-10">
@@ -214,7 +227,9 @@ const Register = () => {
                   </div>
                 </div>
               </div>
-
+              {error && (
+                <p className="text-[red] text-sm">{error}</p>
+              )}
               <div className="">
                 <div className="ym-form-group">
                   <div className="form-check">
@@ -261,14 +276,13 @@ const Register = () => {
                         data-toggle="check"
                         htmlFor="register_eulaAccepted"
                       >
-                        I have read and accept the End User License Agreement
-                        ("EULA").
+                        I have read and accept the End User License Agreement.
                       </label>
                     </span>
                   </div>{' '}
                   <p className="form-text">
                     Read the{' '}
-                    <a href="/eula">End User License Agreement ("EULA")</a>{' '}
+                    <a href="/eula">End User License Agreement</a>{' '}
                     here.
                   </p>
                 </div>
