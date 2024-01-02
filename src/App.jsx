@@ -8,10 +8,13 @@ import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
 import Dashboard from './pages/dashboard/Dashboard';
 import InfoHub from './pages/dashboard/InfoHub';
-import ListCourses from './pages/dashboard/ListCourses';
+// import ListCourses from './pages/dashboard/ListCourses';
 import Profile from './pages/dashboard/Profile';
 import Quizz from './pages/dashboard/Quizz';
-
+import ForgotPassword from './pages/auth/ForgotPassword';
+import OTPPage from './pages/auth/OTP';
+import ResetPassword from './pages/auth/ResetPassword';
+import StudentRoute from './routes/StudentRoute';
 function App() {
   return (
     <>
@@ -21,15 +24,21 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/about-us" element={<AboutUs />} />
+
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/otp" element={<OTPPage />} />
+          <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="/news" element={<News />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/licenses-pricing" element={<LicenseAndPricing />} />
           {/* Authenticated */}
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/info-hub" element={<InfoHub />} />
-          <Route path="/play" element={<Quizz />} />
-          <Route path="/:level" element={<ListCourses />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route exact path='/' element={<StudentRoute />}>
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/info-hub" element={<InfoHub />} />
+            <Route path="/play/:slug" element={<Quizz />} />
+            <Route path="/profile" element={<Profile />} />
+          </Route>
+          {/* <Route path="/:level" element={<ListCourses />} /> */}
         </Routes>
       </BrowserRouter>
     </>

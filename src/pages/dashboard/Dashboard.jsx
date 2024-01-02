@@ -2,10 +2,11 @@ import { useState } from 'react';
 import CustomButton from '../../components/button/CustomButton';
 import CircleProgressBar from '../../components/progress-bar/CircleProgressBar';
 import { DashboardLayout } from '../../layouts/DashboardLayout';
-
+import { QuizData } from '../../data/quizz-data';
 const Dashboard = () => {
   const [percentage, setPercentage] = useState(35);
-
+  const allTopic = QuizData.map(({ topic }) => topic)
+  const topic = Array.from(new Set(allTopic));
   return (
     <DashboardLayout>
       <section className="section !pt-40">
@@ -29,16 +30,17 @@ const Dashboard = () => {
                 1st year of training
               </h2>
               <CircleProgressBar percentage={percentage} circleWidth={200} />
-
               <CustomButton
-                name="Topics (113)"
+                name={topic[0]}
                 className={
                   'ring-1 hover:bg-neutral-900 hover:!text-white ring-neutral-900 !text-neutral-900'
                 }
               />
               <CustomButton
+                to={`/play/${topic[0]}`}
                 name="Start Game"
                 className={'ring-1 bg-neutral-900 '}
+
               />
             </div>
             <div className="card-body px-3 rounded-lg py-6 ring-1 flex flex-col gap-5 bg-neutral-100 pt-4">
@@ -48,12 +50,13 @@ const Dashboard = () => {
               <CircleProgressBar percentage={percentage} circleWidth={200} />
 
               <CustomButton
-                name="Topics (113)"
+                name={topic[1]}
                 className={
                   'ring-1 hover:bg-neutral-900 hover:!text-white ring-neutral-900 !text-neutral-900'
                 }
               />
               <CustomButton
+                to={`/play/${topic[1]}`}
                 name="Start Game"
                 className={'ring-1 bg-neutral-900 '}
               />

@@ -1,18 +1,30 @@
 import clsx from 'clsx';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { FaRegSadTear, FaRegSmile } from 'react-icons/fa';
 import { QuizData } from '../../data/quizz-data';
+import CustomButton from '../../components/button/CustomButton';
 import { DashboardLayout } from '../../layouts/DashboardLayout';
-
+import { useParams } from 'react-router-dom';
+// import { ApiClient } from '../../interceptors/axios';
 const Quizz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [showFeedback, setShowFeedback] = useState(null);
   const [quizFinished, setQuizFinished] = useState(false);
-  const totalQuestions = QuizData.length;
+  const { slug } = useParams();
+  const topicQuizz = QuizData.filter(QuizData => QuizData.topic == slug);
+  // useEffect(() => {
+  //   getQuizz();
+  // }, [])
+  // const getQuizz = async () => {
+  //   await ApiClient().get('student/test').then(res => {
+  //     console.log(res);
+  //   })
+  // }
+  const totalQuestions = topicQuizz.length;
 
   const handleAnswerOptionClick = (answer) => {
-    if (answer === QuizData[currentQuestion].correctAnswer) {
+    if (answer === topicQuizz[currentQuestion].correctAnswer) {
       setScore(score + 1);
       setShowFeedback('Correct!');
     } else {
@@ -89,14 +101,14 @@ const Quizz = () => {
                   </div>
 
                   <h2 className="text-3xl mb-6 text-black">
-                    {QuizData[currentQuestion].question}
+                    {topicQuizz[currentQuestion].question}
                   </h2>
                   {showFeedback && (
                     <div className="text-red-500">{showFeedback}</div>
                   )}
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-                    {QuizData[currentQuestion].options.map((option, index) => (
+                    {topicQuizz[currentQuestion].options.map((option, index) => (
                       <button
                         key={index}
                         className="bg-neutral-300 text-neutral-900 hover:bg-neutral-900 rounded-lg hover:text-white px-4 py-2 transition duration-200"
@@ -144,6 +156,13 @@ const Quizz = () => {
                     >
                       Restart Quiz
                     </button>
+                    <CustomButton
+                      name="Back"
+                      to={'/dashboard'}
+                      className={
+                        'ring-1 ml-5 hover:bg-neutral-900 hover:!text-white ring-neutral-900 !text-neutral-900'
+                      }
+                    />
                   </div>
                 </>
               )}

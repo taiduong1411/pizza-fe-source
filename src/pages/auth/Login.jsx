@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { useNavigate, } from 'react-router-dom';
+import { Link, useNavigate, } from 'react-router-dom';
 import { FaEyeSlash, FaRegEye, FaRegUser } from 'react-icons/fa';
 import { RiLockPasswordFill } from 'react-icons/ri';
 import { ToastContainer, toast } from 'react-toastify';
@@ -127,7 +127,7 @@ const Login = () => {
                         </span>
                       </div>
                       <div className="">
-                        <a href="/password-forgotten">Forgot your password</a>
+                        <Link to="/forgot-password">Forgot your password</Link>
                       </div>
                     </div>
 
@@ -136,7 +136,6 @@ const Login = () => {
                       name="_csrf_token"
                       value="e444fc.xRMa-FVGdJ6HAlqhudSYSExvV0H2fpYifWVSVpxTm2Q.kCNXoBohDurGXRTuwKLQBBVXZgC9H8VSPgAnOOgm6AWgVyOMMhwM7ehGMQ"
                     />
-
                     <div className="mb-4 flex justify-center">
                       <input
                         type="submit"
